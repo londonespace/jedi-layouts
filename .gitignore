@@ -1,5 +1,6 @@
 /node_modules/
 /dist/
+/sources/
 /.git/
 /app/css/
 /**/_backstage
@@ -10,3 +11,4 @@
 /readme.md
 /gulpfile.js
 /.htaccess
+/.bowerrc
