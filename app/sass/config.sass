@@ -4,6 +4,8 @@ $blue: #66C7CD
 $red: #F86868
 $dark: #1a1a1a
 
+$common-transition: .25s ease
+
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
 		font-family: $fname
@@ -17,11 +19,12 @@ $dark: #1a1a1a
 @include font('raleway', normal, 600, '../fonts/RalewaySemiBold/RalewaySemiBold.woff')
 @include font('raleway', normal, 100, '../fonts/RalewayThin/RalewayThin.woff')
 @include font('firasans', normal, 400, '../fonts/FiraSansRegular/FiraSansRegular.woff')
+@include font('fontawesome', normal, 400, '../fonts/fontawesome/fontawesome-webfont.woff')
 
-@import "../libs/fontawesome/fontawesome.min.css"
-@import "../libs/bootstrap-grid/bootstrap-grid.css"
-@import "../libs/mmenu/css/jquery.mmenu.all.css"
-@import "../libs/css-hamburgers/hamburgers.css"
+@import '../libs/fontawesome/fontawesome.min.css'
+@import '../libs/bootstrap-grid/bootstrap-grid.css'
+@import '../libs/mmenu/css/jquery.mmenu.all.css'
+@import '../libs/css-hamburgers/hamburgers.css'
 
 ::placeholder
 	color: #666

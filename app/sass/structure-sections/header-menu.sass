@@ -1,0 +1,56 @@
+// The header-menu (mm-menu) default styles overriding
+
+html.mm-opened
+  overflow-y: scroll
+
+.mm-panels>.mm-panel.mm-hasnavbar
+  right: -18px
+
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+  height: 0
+
+.mm-panels>.mm-panel>.mm-listview:first-child, 
+.mm-panels>.mm-panel>.mm-navbar+.mm-listview
+  margin: 0
+
+.mm-listview > li:not(.mm-divider)::after
+  display: none
+
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), 
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>span
+  background-color: transparent
+
+// The header-menu styling
+
+.mm-navbar
+  height: auto
+  position: relative
+  border-bottom: none
+
+.mm-title
+  padding: 0
+  margin-top: 10px
+  margin-bottom: 30px
+  margin-right: 20px
+  margin-left: 20px
+  
+.mm-listview > li > a
+  transition: $common-transition
+  padding-left: 14%
+  padding-right: 14%
+  padding-top: 10px
+
+  &::before
+    content: '\f219'
+    font-family: fontawesome
+    margin-right: 8px
+    text-decoration: none
+    font-size: 12px
+    color: white
+    transition: $common-transition
+
+.mm-listview > li > a:hover
+  color: $accent
+
+  &::before
+    color: $accent

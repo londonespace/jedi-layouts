@@ -1,0 +1,178 @@
+$default-font: 'raleway', sans-serif
+$accent: #F9C869
+$blue: #66C7CD
+$red: #F86868
+$dark: #1a1a1a
+
+$common-transition: .25s ease
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: local($fname), url($furl) format('woff')
+
+@include font('raleway', normal, 400, '../fonts/RalewayRegular/RalewayRegular.woff')
+@include font('raleway', normal, 700, '../fonts/RalewayBold/RalewayBold.woff')
+@include font('raleway', normal, 800, '../fonts/RalewayExtraBold/RalewayExtraBold.woff')
+@include font('raleway', normal, 600, '../fonts/RalewaySemiBold/RalewaySemiBold.woff')
+@include font('raleway', normal, 100, '../fonts/RalewayThin/RalewayThin.woff')
+@include font('firasans', normal, 400, '../fonts/FiraSansRegular/FiraSansRegular.woff')
+@include font('fontawesome', normal, 400, '../fonts/fontawesome/fontawesome-webfont.woff')
+
+@import '../libs/fontawesome/fontawesome.min.css'
+@import '../libs/bootstrap-grid/bootstrap-grid.css'
+@import '../libs/mmenu/css/jquery.mmenu.all.css'
+@import '../libs/css-hamburgers/hamburgers.css'
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+section
+	background-color: #fff
+
+::selection
+	background-color: $accent
+	color: #fff
+
+// The header-menu (mm-menu) default styles overriding
+
+html.mm-opened
+  overflow-y: scroll
+
+.mm-panels>.mm-panel.mm-hasnavbar
+  right: -18px
+
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+  height: 0
+
+.mm-panels>.mm-panel>.mm-listview:first-child, 
+.mm-panels>.mm-panel>.mm-navbar+.mm-listview
+  margin: 0
+
+.mm-listview > li:not(.mm-divider)::after
+  display: none
+
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), 
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>span
+  background-color: transparent
+
+// The header-menu styling
+
+.mm-navbar
+  height: auto
+  position: relative
+  border-bottom: none
+
+.mm-title
+  padding: 0
+  margin-top: 10px
+  margin-bottom: 30px
+  margin-right: 20px
+  margin-left: 20px
+  
+.mm-listview > li > a
+  transition: $common-transition
+  padding-left: 14%
+  padding-right: 14%
+  padding-top: 10px
+
+  &::before
+    content: '\f219'
+    font-family: fontawesome
+    margin-right: 8px
+    text-decoration: none
+    font-size: 12px
+    color: white
+    transition: $common-transition
+
+.mm-listview > li > a:hover
+  color: $accent
+
+  &::before
+    color: $accent
+
+.site-header
+  min-height: 700px
+  height: 100vh
+  background-color: $dark
+  color: white
+
+.header-top-line
+  padding: 40px
+  position: absolute
+  width: 100%
+  z-index: 1
+
+  .logo
+    margin-left: 5px
+
+
+
+
+// Overriding the default styles from css-hamburgers lib
+
+.hamburger
+  position: absolute
+  right: 0
+  top: 35px
+
+.hamburger-box
+  width: 34px
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+  border-radius: 0
+  background-color: #fff
+  width: 34px
+  height: 2px
+  background-color: #fff
+
+.logo, .mm-title
+  img
+    width: 125px
+    height: auto
+
+
+
+
+.phone
+  position: absolute
+  right: 85px
+  top: 44px
+  font-family: firasans, sans-serif
+  font-size: 22px
+  white-space: no wrap
+  
+  // Fontawesome library style
+  .fa
+    color: #555
+    font-size: 22px
+    margin-right: 5px
