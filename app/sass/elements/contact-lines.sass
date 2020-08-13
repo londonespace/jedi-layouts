@@ -1,0 +1,31 @@
+%contact-line
+  white-space: no wrap
+
+  &::before
+    color: #555
+    margin-right: 5px
+    font-family: fontawesome
+
+.phone
+  @extend %contact-line
+  font-family: firasans, sans-serif
+  font-size: 22px
+  
+  &::before
+    content: '\f10b'
+
+.address
+  @extend %contact-line
+  font-family: raleway
+  font-size: 16px
+
+  &::before
+    content: '\f124'
+
+.clock
+  @extend %contact-line
+  font-family: raleway
+  font-size: 16px
+  
+  &::before
+    content: '\f017'
