@@ -59,7 +59,7 @@ section, header
 section
 	background-color: #fff
 
-.headling
+%headling
 	line-height: 1.4
 	text-transform: uppercase
 	white-space: nowrap
@@ -89,6 +89,8 @@ section
   margin: 0
   display: flex
   align-items: center
+  position: relative
+  top: 10px
 
   span
     margin: 0 10px
@@ -103,6 +105,7 @@ section
     display: inline-block
 
 .header-composition-headling
+  @extend %headling
   margin: 0
   font-weight: 100
   font-size: 67px
@@ -125,6 +128,34 @@ section
 .header-composition-about-info
   margin-top: 40px
 
+@media only screen and (max-width : 1200px)
+  .header-composition-headling
+    font-size: 64px
+
+@media only screen and (max-width : 992px)
+  .header-composition-headling
+    font-size: 48px
+
+@media only screen and (max-width : 768px)
+  .header-composition
+    .button
+      padding: 12px 40px
+
+@media only screen and (max-width : 480px)
+  .header-composition-headling
+    font-size: 28px
+
+  .header-composition-welcome
+    font-size: 9px
+    top: 5px
+
+  .header-composition-location-info
+    margin-top: 14px
+    font-size: 14px
+
+  .header-composition-about-info
+    font-size: 14px
+
 .header-contacts
   position: absolute
   bottom: 0
@@ -135,9 +166,19 @@ section
   padding: 12.5px 0
   background-color: rgba(#151515, .15)
 
-  .phone, .address, .clock
+  %contact-line
     font-size: 16px
     text-align: center
+
+@media only screen and (max-width : 1200px)
+  .header-contacts
+    %contact-line
+      font-size: 15px
+
+@media only screen and (max-width : 768px)
+  .header-contacts
+    %contact-line
+      text-align: left
 
 // The header-menu (mm-menu) default styles overriding
 
@@ -219,6 +260,10 @@ html.mm-opened
     right: 85px
     top: 42px
 
+@media only screen and (max-width : 480px)
+  .header-top-line
+    .phone
+      display: none
 
 .site-header
   min-height: 700px
@@ -274,7 +319,7 @@ html.mm-opened
     opacity: .32
 
 %contact-line
-  white-space: no wrap
+  white-space: nowrap
 
   &::before
     color: #555
