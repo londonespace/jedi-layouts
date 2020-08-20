@@ -44,3 +44,24 @@
   
   &::after
     opacity: .32
+
+.button-white
+  @extend .button
+  background-color: #fff
+  color: #444444
+
+  &:focus, &:hover
+    color: #000
+
+  &::after
+    background-color: rgba(#000, .6)
+
+.button-white:hover
+  background-color: rgba(#fff, 50%)
+  
+  &::after
+    background-color: rgba(#000, .2)
+
+.button-white:active
+  &::after
+    background-color: rgba(#000, .4)

@@ -1,0 +1,64 @@
+.carousel-services-content
+  padding: 50px 10%
+
+.carousel-services-composition
+  margin: auto
+  text-align: center
+  width: 100%
+
+.carousel-services-headling
+  @extend .headling
+  font-weight: 800
+  font-size: 28px
+  margin-top: 5px
+  margin-bottom: 20px
+
+  span
+    font-size: 18px
+    font-weight: 300
+    display: block
+
+.carousel-services-price-list
+  list-style: none
+  margin: 0
+  padding: 0
+  margin-bottom: 25px
+
+.carousel-services-price-item
+  padding: 9px
+  border-bottom: 1px solid rgba(#000, .12)
+  
+  &:last-child
+    border-bottom: none
+
+.carousel-services-price
+  font-family: firasans, sans-serif
+  color: #4a4a4a
+
+  .fa
+    font-size: 14px
+
+.carousel-services-logo
+  margin: auto
+  width: 100px
+  height: auto
+  display: inline-block
+  justify-self: center
+
+.carousel-services-image
+  background-size: cover
+  background-position: center
+  opacity: 0.7
+  transition: $common-transition
+
+.carousel-services-cosmetological-image
+  @extend .carousel-services-image
+  background-image: url(../../img/dest/service.png)
+
+.carousel-services-hairdress-image
+  @extend .carousel-services-image
+  background-image: url(../../img/dest/service2.png)
+
+.carousel-services-manicure-image
+  @extend .carousel-services-image
+  background-image: url(../../img/dest/service3.png)
