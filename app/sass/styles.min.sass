@@ -224,6 +224,125 @@ section
     color: #2c2c2c
 
 
+.carousel-services-content
+  padding: 50px 10%
+
+.carousel-services-composition
+  margin: auto
+  text-align: center
+  width: 100%
+
+.carousel-services-headling
+  @extend .headling
+  font-weight: 800
+  font-size: 28px
+  margin-top: 5px
+  margin-bottom: 20px
+
+  span
+    font-size: 18px
+    font-weight: 300
+    display: block
+
+.carousel-services-price-list
+  list-style: none
+  margin: 0
+  padding: 0
+  margin-bottom: 25px
+
+.carousel-services-price-item
+  padding: 9px
+  border-bottom: 1px solid rgba(#000, .12)
+  
+  &:last-child
+    border-bottom: none
+
+.carousel-services-price
+  font-family: firasans, sans-serif
+  color: #4a4a4a
+
+  .fa
+    font-size: 14px
+
+.carousel-services-logo
+  margin: auto
+  width: 100px
+  height: auto
+  display: inline-block
+  justify-self: center
+
+.carousel-services-image
+  background-size: cover
+  background-position: center
+  opacity: 0.7
+  transition: $common-transition
+
+.carousel-services-cosmetological-image
+  @extend .carousel-services-image
+  background-image: url(../../img/dest/service.png)
+
+.carousel-services-hairdress-image
+  @extend .carousel-services-image
+  background-image: url(../../img/dest/service2.png)
+
+.carousel-services-manicure-image
+  @extend .carousel-services-image
+  background-image: url(../../img/dest/service3.png)
+
+.carousel-services-item
+  font-size: 18px
+  color: white
+  font-weight: 300
+  position: relative
+  display: flex
+  flex-direction: column-reverse
+
+  &:hover
+    .carousel-services-image
+      opacity: 1
+
+.owl-item:nth-child(2n) .carousel-services-item
+  flex-direction: column
+
+.carousel-services-cosmetological-item,
+.carousel-services-hairdress-item,
+.carousel-services-manicure-item
+  @extend .carousel-services-item
+
+$colors: $blue, $red, $accent
+
+@for $i from 1 through length($colors)
+  .carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+    background-color: nth($colors, $i)
+
+@media only screen and (max-width: 1200px)
+  .carousel-services-item
+    flex-direction: column
+
+.carousel-services
+  background-color: $dark
+
+.carousel-services > .owl-nav
+  position: absolute
+  top: 0
+  width: 100%
+  
+  .owl-prev, .owl-next
+    width: 64px 
+    height: 64px 
+    background-color: #ffffff 
+    color: $dark
+    position: absolute
+    line-height: 64px
+    font-size: 26px
+    text-align: center
+
+  .owl-prev
+    left: 0
+
+  .owl-next
+    right: 0
+
 .header-composition-container
   height: 100%
   display: flex
@@ -427,122 +546,3 @@ html.mm-opened
   .header-top-line
     .phone
       display: none
-
-.carousel-services-content
-  padding: 50px 10%
-
-.carousel-services-composition
-  margin: auto
-  text-align: center
-  width: 100%
-
-.carousel-services-headling
-  @extend .headling
-  font-weight: 800
-  font-size: 28px
-  margin-top: 5px
-  margin-bottom: 20px
-
-  span
-    font-size: 18px
-    font-weight: 300
-    display: block
-
-.carousel-services-price-list
-  list-style: none
-  margin: 0
-  padding: 0
-  margin-bottom: 25px
-
-.carousel-services-price-item
-  padding: 9px
-  border-bottom: 1px solid rgba(#000, .12)
-  
-  &:last-child
-    border-bottom: none
-
-.carousel-services-price
-  font-family: firasans, sans-serif
-  color: #4a4a4a
-
-  .fa
-    font-size: 14px
-
-.carousel-services-logo
-  margin: auto
-  width: 100px
-  height: auto
-  display: inline-block
-  justify-self: center
-
-.carousel-services-image
-  background-size: cover
-  background-position: center
-  opacity: 0.7
-  transition: $common-transition
-
-.carousel-services-cosmetological-image
-  @extend .carousel-services-image
-  background-image: url(../../img/dest/service.png)
-
-.carousel-services-hairdress-image
-  @extend .carousel-services-image
-  background-image: url(../../img/dest/service2.png)
-
-.carousel-services-manicure-image
-  @extend .carousel-services-image
-  background-image: url(../../img/dest/service3.png)
-
-.carousel-services-item
-  font-size: 18px
-  color: white
-  font-weight: 300
-  position: relative
-  display: flex
-  flex-direction: column-reverse
-
-  &:hover
-    .carousel-services-image
-      opacity: 1
-
-.owl-item:nth-child(2n) .carousel-services-item
-  flex-direction: column
-
-.carousel-services-cosmetological-item,
-.carousel-services-hairdress-item,
-.carousel-services-manicure-item
-  @extend .carousel-services-item
-
-$colors: $blue, $red, $accent
-
-@for $i from 1 through length($colors)
-  .carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
-    background-color: nth($colors, $i)
-
-@media only screen and (max-width: 1200px)
-  .carousel-services-item
-    flex-direction: column
-
-.carousel-services
-  background-color: $dark
-
-.carousel-services > .owl-nav
-  position: absolute
-  top: 0
-  width: 100%
-  
-  .owl-prev, .owl-next
-    width: 64px 
-    height: 64px 
-    background-color: #ffffff 
-    color: $dark
-    position: absolute
-    line-height: 64px
-    font-size: 26px
-    text-align: center
-
-  .owl-prev
-    left: 0
-
-  .owl-next
-    right: 0
