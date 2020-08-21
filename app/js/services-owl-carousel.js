@@ -25,13 +25,10 @@ $(function () {
 		}
 	});
 
-	$('.carousel-services-headling').each(wrapLastWordInSpan);
-
-	window.on('resize', alignCarouselItemsHeight);
+	$(window).on('resize', alignCarouselItemsHeight);
 
 	function setHeightForCarouselImages() {
 		let items = $('#carousel-services').find('[class$="item"]');
-		console.log(1);
 
 		items.each(function () {
 			let itemHeight = $(this).find('.carousel-services-content').outerHeight();
@@ -39,10 +36,6 @@ $(function () {
 
 			itemImage.css('min-height', itemHeight);
 		});
-	}
-
-	function wrapLastWordInSpan() {
-		$(this).html($(this).html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	}
 
 	function alignCarouselItemsHeight() {
