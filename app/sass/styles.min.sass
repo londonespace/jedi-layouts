@@ -29,6 +29,8 @@ $common-transition: .25s ease
 @import '../libs/owl.carousel/assets/owl.carousel.min.css'
 @import '../libs/owl.carousel/assets/owl.theme.default.min.css'
 @import '../libs/fotorama/fotorama.css'
+@import '../libs/fotorama/fotorama.css'
+@import '../libs/selectize/css/selectize.css'
 
 ::placeholder
 	color: #666
@@ -39,10 +41,6 @@ $common-transition: .25s ease
 
 input, textarea
 	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
 
 html, body
 	height: 100%
@@ -63,10 +61,6 @@ section, header
 section
 	background-color: #fff
 
-section.inverse
-	color: white
-	background-color: $dark
-
 .headling
 	line-height: 1.4
 	text-transform: uppercase
@@ -84,6 +78,26 @@ section.inverse
 
   span
     color: #fff
+
+.section-inverse
+  color: white
+  background-color: $dark
+
+.section-full-overlay
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.section-half-overlay
+  content: ''
+  position: absolute
+  right: 0
+  height: 100%
+  width: 50%
 
 @mixin section-common-padding
   padding: 5% 0
@@ -208,6 +222,16 @@ section.inverse
   height: 2px
   background-color: #fff
 
+.logo-dark
+  margin: auto
+  width: 100px
+  height: auto
+  display: inline-block
+
+  img
+    width: inherit
+    height: inherit
+
 .logo, .mm-title
   img
     width: 125px
@@ -218,16 +242,6 @@ section.inverse
 
 .owl-carousel .owl-item
   backface-visibility: inherit
-
-.section-overlay
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background-color: rgba($over, .92)
 
 .social-links-container
   margin: auto
@@ -254,6 +268,145 @@ section.inverse
     background-color: rgba(#fff, .4)
     color: #2c2c2c
 
+
+.success-massage
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  text-transform: uppercase
+  font-weight: bold
+  z-index: 2
+
+  span
+    margin: auto
+  
+  & ~ *
+    transition: all 1s ease
+    opacity: 1
+  
+.success-massage.active ~ *
+  opacity: 0.5
+  filter: blur(10px)
+
+/* There are default styles for select of the section form 'callback'. 
+ It is stylized by 'selectized' plugin additionally in this layout */
+
+select.s-call-callback-select
+  @extend .s-call-callback-field
+  padding: 10px 22px
+
+  option
+    color: #333333
+
+// There are default styles of 'selectize' overriding 
+ 
+.selectize-control.single
+
+  .selectize-input, .selectize-input.input-active
+    @extend .s-call-callback-field
+    box-shadow: none
+    overflow: inherit
+    line-height: inherit
+    text-align: left
+  
+    &::before
+      background-color: transparent
+
+    &::after
+      border: none
+      content: '\f107'
+      font-family: fontawesome
+      position: absolute
+      right: 30px
+      top: 12px
+
+    input
+      box-shadow: none
+      font-size: 16px
+      color: white
+
+    input::placeholder
+      color: white
+
+  .selectize-input.dropdown-active::after
+    content: '\f106'
+
+  .selectize-dropdown
+    font-size: 15px
+    border: none
+    text-align: left
+
+  .selectize-dropdown-content .option
+    padding: 10px 22px
+
+  .selectize-dropdown-content .option.active
+    background-color: lighten($accent, 15)
+
+.s-call
+  @extend .section-inverse
+  background-image: url(../../img/dest/madama.jpg)
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: 10%
+  background-color: white
+
+  &::before
+    @extend .section-half-overlay
+    background-color: rgba($accent, .92)
+
+#s-call-callback
+  padding: 25% 0
+  position: relative
+
+.s-call-form-head
+  @extend .headling
+  font-size: 30px
+  color: white
+
+.s-call-leave-request
+  margin-top: 0
+
+.s-call-callback-field
+  border: 1px solid rgba(black, .1)
+  border-bottom-width: 2px
+  border-radius: 2px
+  background-color: transparent
+  padding: 8px 20px
+  outline: none
+  display: inline-block
+  font-size: 16px
+  width: 100%
+  margin-top: 15px
+  color: white
+
+  &::placeholder
+    color: white
+
+.s-call-submit-wrapper
+  margin-top: 40px
+  display: inline-block
+  position: relative
+
+  &::after
+    @extend .button-white::after
+
+.s-call-submit
+  @extend .button-white
+
+@media screen and ( max-width: 1200px )
+  .s-call
+    background-size: cover
+
+@media screen and ( max-width: 992px )
+  .s-call
+    &::before
+      width: 100%
+
+  #s-call-callback
+    padding: 12% 0
 
 .header-composition-container
   height: 100%
@@ -460,9 +613,14 @@ html.mm-opened
       display: none
 
 .s-king
+  @extend .section-inverse
   background-image: url(../../img/dest/photos/foto-16.jpg)
   font-size: 18px
   @include section-common-padding
+
+.s-king::before
+  @extend .section-full-overlay
+  background-color: rgba($over, .92)
 
 .s-king-headling
   @extend .section-common-headling
@@ -551,13 +709,6 @@ html.mm-opened
 
   .fa
     font-size: 14px
-
-.carousel-services-logo
-  margin: auto
-  width: 100px
-  height: auto
-  display: inline-block
-  justify-self: center
 
 .carousel-services-image
   background-size: cover

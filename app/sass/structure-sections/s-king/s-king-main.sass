@@ -1,7 +1,12 @@
 .s-king
+  @extend .section-inverse
   background-image: url(../../img/dest/photos/foto-16.jpg)
   font-size: 18px
   @include section-common-padding
+
+.s-king::before
+  @extend .section-full-overlay
+  background-color: rgba($over, .92)
 
 .s-king-headling
   @extend .section-common-headling

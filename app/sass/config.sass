@@ -29,6 +29,8 @@ $common-transition: .25s ease
 @import '../libs/owl.carousel/assets/owl.carousel.min.css'
 @import '../libs/owl.carousel/assets/owl.theme.default.min.css'
 @import '../libs/fotorama/fotorama.css'
+@import '../libs/fotorama/fotorama.css'
+@import '../libs/selectize/css/selectize.css'
 
 ::placeholder
 	color: #666
@@ -39,10 +41,6 @@ $common-transition: .25s ease
 
 input, textarea
 	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
 
 html, body
 	height: 100%
@@ -62,10 +60,6 @@ section, header
 
 section
 	background-color: #fff
-
-section.inverse
-	color: white
-	background-color: $dark
 
 .headling
 	line-height: 1.4

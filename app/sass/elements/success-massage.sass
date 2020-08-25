@@ -1,0 +1,21 @@
+.success-massage
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  text-transform: uppercase
+  font-weight: bold
+  z-index: 2
+
+  span
+    margin: auto
+  
+  & ~ *
+    transition: all 1s ease
+    opacity: 1
+  
+.success-massage.active ~ *
+  opacity: 0.5
+  filter: blur(10px)
