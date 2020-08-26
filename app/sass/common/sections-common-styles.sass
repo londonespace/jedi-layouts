@@ -3,6 +3,8 @@
   font-size: 30px
   font-weight: 800
   color: $accent
+  white-space: normal
+  position: relative
 
   span
     color: #fff
@@ -11,24 +13,24 @@
   color: white
   background-color: $dark
 
-.section-full-overlay
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
+%section-full-overlay
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
-.section-half-overlay
+%section-half-overlay
   content: ''
   position: absolute
   right: 0
   height: 100%
   width: 50%
 
-@mixin section-common-padding
+%section-common-padding
   padding: 5% 0
 
-  @media screen and (max-width: 1200px)
+@media screen and (max-width: 1200px)
+  %section-common-padding
     padding: 8% 0

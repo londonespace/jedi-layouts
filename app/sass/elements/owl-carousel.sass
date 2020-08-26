@@ -1,2 +1,21 @@
 .owl-carousel .owl-item
   backface-visibility: inherit
+
+.owl-dots
+  width: 100%
+  text-align: center
+  display: inline-block
+  margin-top: 60px
+
+  .owl-dot
+    width: 8px
+    height: 8px
+    background-color: #fff
+    border-radius: 10em
+    display: inline-block
+    margin: 5px
+    transition: $common-transition
+
+  .owl-dot.active
+    background-color: $accent
+    transform: scale(1.3)

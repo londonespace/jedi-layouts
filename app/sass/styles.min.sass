@@ -60,6 +60,7 @@ section, header
 
 section
 	background-color: #fff
+	position: relative
 
 .headling
 	line-height: 1.4
@@ -75,6 +76,8 @@ section
   font-size: 30px
   font-weight: 800
   color: $accent
+  white-space: normal
+  position: relative
 
   span
     color: #fff
@@ -83,26 +86,26 @@ section
   color: white
   background-color: $dark
 
-.section-full-overlay
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
+%section-full-overlay
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
-.section-half-overlay
+%section-half-overlay
   content: ''
   position: absolute
   right: 0
   height: 100%
   width: 50%
 
-@mixin section-common-padding
+%section-common-padding
   padding: 5% 0
 
-  @media screen and (max-width: 1200px)
+@media screen and (max-width: 1200px)
+  %section-common-padding
     padding: 8% 0
 
 .button
@@ -243,6 +246,25 @@ section
 .owl-carousel .owl-item
   backface-visibility: inherit
 
+.owl-dots
+  width: 100%
+  text-align: center
+  display: inline-block
+  margin-top: 60px
+
+  .owl-dot
+    width: 8px
+    height: 8px
+    background-color: #fff
+    border-radius: 10em
+    display: inline-block
+    margin: 5px
+    transition: $common-transition
+
+  .owl-dot.active
+    background-color: $accent
+    transform: scale(1.3)
+
 .social-links-container
   margin: auto
 
@@ -290,6 +312,60 @@ section
 .success-massage.active ~ *
   opacity: 0.5
   filter: blur(10px)
+
+.s-king
+  @extend .section-inverse, %section-common-padding
+  background-image: url(../../img/dest/photos/foto-16.jpg)
+  font-size: 18px
+
+  &::before
+    @extend %section-full-overlay
+    background-color: rgba($over, .92)
+
+.s-king-info
+  margin: 30px 0
+
+// The section-king gallery (fotorama plugin) default styles overriding
+
+.s-king-gallery.fotorama
+  background-color: rgba($dark, .4)
+
+  .fotorama__nav-wrap
+    position: absolute
+    bottom: 15px
+    padding: 0 30px
+    width: 100%
+
+  .fotorama__thumb
+    border: 4px solid #fff
+    transition: $common-transition
+  
+  .fotorama__thumb-border
+    border-color: $over
+
+  .fotorama__nav:after, .fotorama__stage:before,
+  .fotorama__nav:after, .fotorama__stage:after
+    display: none
+
+  .fotorama__arr--prev::before, .fotorama__arr--next::before
+    font-family: fontawesome
+    font-size: 32px
+
+  .fotorama__arr--prev::before
+    content: '\f104'
+    position: relative
+    left: 16px
+
+  .fotorama__arr--next::before
+    content: '\f105'
+
+  .fotorama__active .fotorama__thumb
+    border-color: $over
+
+@media screen and (max-width: 1200px)
+  .s-king
+    font-size: 16px
+  
 
 /* There are default styles for select of the section form 'callback'. 
  It is stylized by 'selectized' plugin additionally in this layout */
@@ -354,7 +430,7 @@ select.s-call-callback-select
   background-color: white
 
   &::before
-    @extend .section-half-overlay
+    @extend %section-half-overlay
     background-color: rgba($accent, .92)
 
 #s-call-callback
@@ -407,6 +483,69 @@ select.s-call-callback-select
 
   #s-call-callback
     padding: 12% 0
+
+.s-partners
+  @extend %section-common-padding
+  background-image: url(../../img/dest/bg-3.jpg)
+  &::before
+    @extend %section-full-overlay
+    background-color: rgba(white, .92)
+
+.s-partners-headling
+  @extend .section-common-headling
+  text-align: center
+  margin-top: 10px
+
+.s-partners-carousel-partner
+  height: 100%
+  display: flex
+  margin: auto
+
+#s-partners-carousel .owl-stage
+  display: flex
+
+  .owl-item
+    margin-top: 30px
+
+  .owl-item img
+    max-width: 100%
+    width: auto
+    display: inline-block
+    margin: auto
+
+#s-partners-carousel .owl-nav
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 2
+
+  .owl-prev, .owl-next
+    position: absolute
+    top: 50px
+    color: #999999
+    font-size: 30px
+    transition: opacity .5s ease
+    padding: 0 10px
+
+  .owl-prev:hover, .owl-next:hover
+    opacity: .6
+
+  .owl-prev
+    left: -60px
+
+  .owl-next
+    right: -60px
+
+@media screen and ( max-width: 768px)
+  .s-partners-headling
+    margin: 0
+
+  #s-partners-carousel .owl-nav .owl-prev
+    left: 0
+
+  #s-partners-carousel .owl-nav .owl-next
+    right: 0
+  
 
 .header-composition-container
   height: 100%
@@ -612,64 +751,6 @@ html.mm-opened
     .phone
       display: none
 
-.s-king
-  @extend .section-inverse
-  background-image: url(../../img/dest/photos/foto-16.jpg)
-  font-size: 18px
-  @include section-common-padding
-
-.s-king::before
-  @extend .section-full-overlay
-  background-color: rgba($over, .92)
-
-.s-king-headling
-  @extend .section-common-headling
-
-.s-king-info
-  margin: 30px 0
-
-// The section-king gallery (fotorama plugin) default styles overriding
-
-.s-king-gallery.fotorama
-  background-color: rgba($dark, .4)
-
-  .fotorama__nav-wrap
-    position: absolute
-    bottom: 15px
-    padding: 0 30px
-    width: 100%
-
-  .fotorama__thumb
-    border: 4px solid #fff
-    transition: $common-transition
-  
-  .fotorama__thumb-border
-    border-color: $over
-
-  .fotorama__nav:after, .fotorama__stage:before,
-  .fotorama__nav:after, .fotorama__stage:after
-    display: none
-
-  .fotorama__arr--prev::before, .fotorama__arr--next::before
-    font-family: fontawesome
-    font-size: 32px
-
-  .fotorama__arr--prev::before
-    content: '\f104'
-    position: relative
-    left: 16px
-
-  .fotorama__arr--next::before
-    content: '\f105'
-
-  .fotorama__active .fotorama__thumb
-    border-color: $over
-
-@media screen and (max-width: 1200px)
-  .s-king
-    font-size: 16px
-  
-
 .carousel-services-content
   padding: 50px 10%
 
@@ -728,6 +809,10 @@ html.mm-opened
   @extend .carousel-services-image
   background-image: url(../../img/dest/service3.png)
 
+@media screen and ( max-width: 375px )
+  .carousel-services-headling
+    font-size: 24px
+
 .carousel-services-item
   font-size: 18px
   color: white
@@ -781,3 +866,73 @@ $colors: $blue, $red, $accent
 
   .owl-next
     right: 0
+
+.s-review
+  @extend .section-inverse, %section-common-padding
+  background-image: url(../../img/dest/bg-2.jpg)
+
+  &::before
+    @extend %section-full-overlay
+    background-color: rgba($over, .92)
+
+.s-review-headling
+  text-align: center
+
+.s-review-quotes
+  position: absolute
+  width: 100%
+
+  &::before, &::after
+    content: ',,'
+    position: absolute
+    font-size: 56px
+    color: $accent
+    font-family: 'Times New Roman', serif
+    font-weight: bold
+    line-height: 0
+    display: block
+
+  &::before
+    top: 210px
+    left: -60px
+    transform: rotate(180deg)
+
+  &::after
+    top: 172px
+    right: -60px
+
+#s-review-comments
+  text-align: center
+
+.s-review-comment
+  margin-top: 20px
+
+.s-review-comment-header
+  font-family: 'Times New Roman', serif
+  font-style: italic
+  font-weight: bold
+  font-size: 30px
+
+.s-review-comment-date
+  font-family: 'Times New Roman', serif
+  font-style: italic
+  font-size: 14px
+  margin-top: 2px
+  display: block
+  color: #888
+
+.s-review-comment-stars
+  margin-top: 18px
+  margin-bottom: 25px
+  font-size: 14px
+  color: $accent
+
+  .fa
+    margin: 0 2.5px
+
+.s-review-comment-text
+  color: #95989A
+
+@media only screen and (max-width: 768px)
+  .s-review-quotes
+    display: none
