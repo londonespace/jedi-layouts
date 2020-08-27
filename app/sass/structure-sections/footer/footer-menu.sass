@@ -1,0 +1,32 @@
+.footer-menu-list
+  padding: 0
+  margin: 0
+  list-style-type: none
+
+.footer-menu-link
+  color: #979797
+  transition: color .5s ease
+  display: inline-block
+  padding: 3.5px 0
+  text-decoration: underline
+  padding-left: 23px
+  position: relative
+
+  &::before
+    position: absolute
+    left: 0
+    top: 4px
+    font-family: fontawesome
+    content: '\f219'
+    color: white
+    transition: inherit
+  
+  &:hover, &:focus
+    color: $accent
+
+  &:hover::before, &:focus::before
+    color: $accent
+
+@media screen and ( max-width: 768px  )
+  .footer-menu
+    padding-left: 30px

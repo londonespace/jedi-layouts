@@ -1,0 +1,46 @@
+.footer-contact-line
+  @extend .contact-line
+  padding-left: 24px
+  white-space: normal
+  margin-bottom: 15px
+
+  &::before
+    position: absolute
+
+.footer-address, .footer-clock
+  @extend .footer-contact-line
+  font-size: 15px
+
+  &::before
+    font-size: 18px
+    top: -1.5px
+    left: 0
+
+.footer-address
+  @extend .address
+
+.footer-clock
+  @extend .clock
+
+.footer-phone
+  @extend .footer-contact-line, .phone
+  font-size: 26px
+  white-space: nowrap
+
+  &::before
+    font-size: 22px
+    left: 2.5px
+    top: 1.5px
+
+.footer-map
+  max-height: 200px
+  opacity: 0.7
+  transition: opacity .5s ease
+
+  &:hover
+    opacity: 1
+
+@media screen and ( max-width: 992px )
+  .footer-phone
+    font-size: 24px
+    margin-top: 0
