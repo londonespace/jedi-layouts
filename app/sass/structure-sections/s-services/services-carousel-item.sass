@@ -13,12 +13,7 @@
 .owl-item:nth-child(2n) .carousel-services-item
   flex-direction: column
 
-.carousel-services-cosmetological-item,
-.carousel-services-hairdress-item,
-.carousel-services-manicure-item
-  @extend .carousel-services-item
-
-$colors: $blue, $red, $accent
+$colors: $accent, $blue, $red
 
 @for $i from 1 through length($colors)
   .carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})

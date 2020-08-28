@@ -29,9 +29,9 @@
 </head>
 
 <body>
-	<div id="preloader">
+	<!-- <div id="preloader">
 		<div class="preloader-pulse"></div>
-	</div>
+	</div> -->
 
 	<div class="my-page">
 
@@ -40,8 +40,8 @@
 			<header class="site-header">
 
 				<div class="header-top-line">
-					<a href="#" class="logo"><img src="img/dest/logo-1.svg" alt="Салон красоты Смитлер"></a>
-					<div class="phone">+7 (495) 118-84-35</div>
+					<a href="#" class="header-logo"><img src="img/dest/logo-1.svg" alt="Салон красоты Смитлер"></a>
+					<div class="header-phone">+7 (495) 118-84-35</div>
 
 					<a href="#my-menu" class="hamburger hamburger--emphatic">
 						<span class="hamburger-box">
@@ -68,7 +68,7 @@
 				<div class="header-composition-container container">
 
 					<div class="row">
-						<div class="col-sm-7 col-xs-10">
+						<div class="col-md-7 col-10">
 
 							<div class="header-composition">
 
@@ -104,15 +104,15 @@
 				<div class="header-contacts">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-4 col-sm-6">
+							<div class="col-lg-4 col-md-6">
 								<div class="address">г. Москва, ул. Ивана Бабушкина, 22с1</div>
 							</div>
 
-							<div class="col-md-4 col-sm-6">
+							<div class="col-lg-4 col-md-6">
 								<div class="phone">+7 (495) 118-84-35</div>
 							</div>
 
-							<div class="col-md-4 hidden-sm hidden-xs">
+							<div class="col-lg-4 d-lg-block d-md-none">
 								<div class="clock">Время работы: ежедневно, 10:00 - 22:00</div>
 							</div>
 						</div>
@@ -126,9 +126,31 @@
 		<div id="my-content">
 			<main>
 				<section class="s-services">
-
 					<div class="carousel-services owl-carousel" id="carousel-services">
-						<div class="carousel-services-cosmetological-item">
+						<div class="carousel-services-item">
+							<div class="carousel-services-content">
+								<div class="carousel-services-composition">
+
+									<div class="logo-dark"><img src="img/dest/logo-2.svg" alt="Смитлер - салон красоты">
+									</div>
+									<h3 class="carousel-services-headling">Маникюрный сервис</h3>
+									<ul class="carousel-services-price-list">
+										<li class="carousel-services-price-item">Ключевая услуга #1 - <strong
+												class="carousel-services-price">8500 <i class="fa fa-rub"></i></strong></li>
+										<li class="carousel-services-price-item">Ключевая услуга #2 - <strong
+												class="carousel-services-price">8500 <i class="fa fa-rub"></i></strong></li>
+										<li class="carousel-services-price-item">Ключевая услуга #3 - <strong
+												class="carousel-services-price">8500 <i class="fa fa-rub"></i></strong></li>
+									</ul>
+									<a href="#" class="button-white">Все услуги</a>
+
+								</div>
+							</div>
+
+							<div class="carousel-services-manicure-image"></div>
+						</div>
+
+						<div class="carousel-services-item">
 							<div class="carousel-services-content">
 								<div class="carousel-services-composition">
 
@@ -154,7 +176,7 @@
 							<div class="carousel-services-cosmetological-image"></div>
 						</div>
 
-						<div class="carousel-services-hairdress-item">
+						<div class="carousel-services-item">
 							<div class="carousel-services-content">
 								<div class="carousel-services-composition">
 
@@ -177,7 +199,7 @@
 							<div class="carousel-services-hairdress-image"></div>
 						</div>
 
-						<div class="carousel-services-manicure-item">
+						<div class="carousel-services-item">
 							<div class="carousel-services-content">
 								<div class="carousel-services-composition">
 
@@ -200,7 +222,7 @@
 							<div class="carousel-services-manicure-image"></div>
 						</div>
 
-						<div class="carousel-services-cosmetological-item">
+						<div class="carousel-services-item">
 							<div class="carousel-services-content">
 								<div class="carousel-services-composition">
 
@@ -233,7 +255,7 @@
 					<div class="container">
 						<div class="row">
 
-							<div class="col-md-5">
+							<div class="col-lg-5">
 								<h2 class="section-common-headling">Королевский салон</h2>
 
 								<p class="s-king-info"><strong>S&Mitler</strong> встречает своих посетителей современным дизайном и
@@ -245,7 +267,7 @@
 									качественный нейл-сервис, а мужчин порадуют услугами стилистов и уходом за лицом.</p>
 							</div>
 
-							<div class="col-md-7">
+							<div class="col-lg-7">
 								<div class="s-king-gallery fotorama" data-nav="thumbs" data-thumbwidth="110.5" data-thumbheight="66"
 									data-thumbborderwidth="4" data-thumb-margin="10" data-width="100%">
 									<img src="img/dest/photos/small/foto-13.jpg" alt="Фото салона красоты">
@@ -267,7 +289,7 @@
 				<section class="s-call">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-5 col-md-offset-7 col-sm-6 col-sm-offset-6">
+							<div class="col-lg-5 offset-lg-7 col-md-6 offset-md-6">
 
 								<form id="s-call-callback" action="#">
 
@@ -306,11 +328,11 @@
 					<div class="s-review-container container">
 						<div class="row">
 
-							<div class="col-sm">
+							<div class="col-md">
 								<h2 class="s-review-headling section-common-headling">Отзывы наших партнеров</h2>
 							</div>
 
-							<div class="col-sm-8 col-sm-offset-2">
+							<div class="col-md-8 offset-md-2">
 								<div class="s-review-quotes"></div>
 
 								<div id="s-review-comments" class="owl-carousel">
@@ -376,11 +398,11 @@
 					<div class="container">
 						<div class="row">
 
-							<div class="col-sm">
+							<div class="col-md">
 								<h2 class="s-partners-headling">Наши партнеры</h2>
 							</div>
 
-							<div class="col-sm-10 col-sm-offset-1">
+							<div class="col-md-10 offset-md-1">
 								<div id="s-partners-carousel" class="owl-carousel">
 
 									<div class="s-partners-carousel-partner">
@@ -421,7 +443,7 @@
 				<div class="container">
 					<div class="row">
 
-						<div class="col-lg-2 col-sm-4">
+						<div class="col-xl-2 col-md-4">
 							<div class="footer-column">
 								<div class="logo"><img src="img/dest/logo-1.svg" alt="Салон красоты"></div>
 								<p class="footer-first-saloon">Салон красоты <br>бизнес-класса в Москве</p>
@@ -445,7 +467,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-3 col-sm-4 ">
+						<div class="col-xl-3 col-md-4">
 							<div class="footer-column">
 								<nav class="footer-menu">
 									<ul class="footer-menu-list">
@@ -462,7 +484,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-3 col-sm-4 ">
+						<div class="col-xl-3 col-md-4">
 							<div class="footer-column">
 								<p class="footer-address">г. Москва, ул. Ивана Бабушкина, 22с1,
 									м. Профсоюзная</p>
@@ -471,7 +493,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-4 col-sm-12 ">
+						<div class="col-xl-4 col-md-12">
 							<div class="footer-column">
 								<div class="footer-map">
 									<script type="text/javascript" charset="utf-8" async

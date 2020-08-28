@@ -7,6 +7,7 @@ $(function () {
 		navText: ['<i class="fa fa-angle-double-left"></i>',
 			'<i class="fa fa-angle-double-right"></i>'],
 		dots: false,
+		startPosition: 1,
 		responsiveClass: true,
 		responsive: {
 
@@ -14,11 +15,11 @@ $(function () {
 				items: 1
 			},
 
-			800: {
+			768: {
 				items: 2
 			},
 
-			1100: {
+			1200: {
 				items: 3
 			}
 
