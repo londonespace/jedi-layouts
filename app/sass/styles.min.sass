@@ -377,6 +377,8 @@ section
   background-color: #e0e0e0
   z-index: 12
   border-radius: 10em 
+  border: none
+  outline: none
   color: #666666
   font-size: 26px
   width: 50px
@@ -394,6 +396,11 @@ section
 
   &.active
     right: 25px
+
+.footer-contacts
+  list-style: none
+  padding: 0
+  margin: 0
 
 .footer-contact-line
   @extend .contact-line
@@ -585,288 +592,6 @@ section
     font-size: 16px
   
 
-.header-composition-container
-  height: 100%
-  display: flex
-  align-items: center
-
-.header-composition
-  text-align: center
-  position: relative
-  margin: 0 auto
-
-  .button
-    padding: 16px 45px
-    margin-top: 25px
-
-.header-composition-welcome
-  text-transform: uppercase
-  font-size: 14px
-  white-space: nowrap
-  margin: 0
-  display: flex
-  align-items: center
-  position: relative
-  top: 10px
-
-  span
-    margin: 0 10px
-    position: relative
-
-  &::before, &::after
-    content: ''
-    height: 1px
-    background-color: white
-    position: relative
-    width: 100%
-    display: inline-block
-
-.header-composition-headling
-  @extend .headling
-  margin: 0
-  font-weight: 100
-  font-size: 67px
-  line-height: 1.6
-  border-bottom: 1px solid white
-
-.header-composition-location-info
-  font-size: 17px
-  text-transform: uppercase
-  display: block
-  margin-top: 25px
-
-  &::before, &::after
-    content: '\f005'
-    font-family: fontawesome
-    padding: 0 10px
-    color: #555
-    font-size: 12px
-
-.header-composition-about-info
-  margin-top: 40px
-
-@media only screen and (max-width : 1200px)
-  .header-composition-headling
-    font-size: 64px
-
-@media only screen and (max-width : 992px)
-  .header-composition-headling
-    font-size: 48px
-
-@media only screen and (max-width : 768px)
-  .header-composition
-    .button
-      padding: 12px 40px
-
-@media only screen and (max-width : 480px)
-  .header-composition-headling
-    font-size: 28px
-
-  .header-composition-welcome
-    font-size: 9px
-    top: 5px
-
-  .header-composition-location-info
-    margin-top: 14px
-    font-size: 14px
-
-  .header-composition-about-info
-    font-size: 14px
-
-.header-contacts
-  position: absolute
-  bottom: 0
-  left: 50%
-  transform: translateX(-50%)
-  border-top: rgba(#fff, .15) 1px solid
-  width: 100%
-  padding: 12.5px 0
-  background-color: rgba(#151515, .15)
-
-  .contact-line
-    font-size: 16px
-    text-align: center
-
-@media only screen and (max-width : 1200px)
-  .header-contacts
-    .contact-line
-      font-size: 15px
-
-@media only screen and (max-width : 768px)
-  .header-contacts
-    .contact-line
-      text-align: left
-
-.site-header
-  min-height: 700px
-  height: 100vh
-  background-color: $dark
-  background-image: url(#{$img-dir}top-bg.jpg)
-  color: white
-
-// The header-menu (mm-menu plugin) default styles overriding
-
-html.mm-opened
-  overflow-y: scroll
-
-.mm-panels>.mm-panel.mm-hasnavbar
-  right: -18px
-
-.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
-  height: 0
-
-.mm-panels>.mm-panel>.mm-listview:first-child, 
-.mm-panels>.mm-panel>.mm-navbar+.mm-listview
-  margin: 0
-
-.mm-listview > li:not(.mm-divider)::after
-  display: none
-
-.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), 
-.mm-menu.mm-theme-black .mm-listview>li.mm-selected>span
-  background-color: transparent
-
-// The header-menu styling
-
-.mm-navbar
-  height: auto
-  position: relative
-  border-bottom: none
-
-.mm-title
-  padding: 0
-  margin-top: 10px
-  margin-bottom: 30px
-  margin-right: 20px
-  margin-left: 20px
-  
-.mm-listview > li > a
-  transition: $common-transition
-  padding-left: 14%
-  padding-right: 14%
-  padding-top: 10px
-
-  &::before
-    content: '\f219'
-    font-family: fontawesome
-    margin-right: 8px
-    text-decoration: none
-    font-size: 12px
-    color: white
-    transition: $common-transition
-
-.mm-listview > li > a:hover
-  color: $accent
-
-  &::before
-    color: $accent
-
-.header-social
-  position: absolute
-  display: flex
-  top: 0
-  right: 0
-  height: 100%
-  border-left: 1px solid rgba(#fff, .1)
-  padding: 0 12.5px
-
-.header-top-line
-  padding: 40px
-  position: absolute
-  width: 100%
-  z-index: 1
-
-.header-logo
-  @extend .logo
-  margin-left: 5px
-  position: absolute
-  top: 49.5px
-
-.header-phone
-  @extend .phone
-  position: absolute
-  right: 82px
-  top: 42px
-
-  &::before
-    margin-right: 11.5px
-
-
-@media only screen and (max-width : 480px)
-  .header-top-line
-    .phone
-      display: none
-
-#s-review-comments
-  text-align: center
-
-.s-review-comment
-  margin-top: 20px
-
-.s-review-comment-header
-  font-family: 'Times New Roman', serif
-  font-style: italic
-  font-weight: bold
-  font-size: 30px
-
-.s-review-comment-date
-  font-family: 'Times New Roman', serif
-  font-style: italic
-  font-size: 14px
-  margin-top: 2px
-  display: block
-  color: #888
-
-.s-review-comment-stars
-  margin-top: 18px
-  margin-bottom: 25px
-  font-size: 14px
-  color: $accent
-
-  .fa
-    margin: 0 2.5px
-
-.s-review-comment-text
-  color: #95989A
-
-.s-review
-  @extend .section-inverse, %section-common-padding
-  background-image: url(#{$img-dir}bg-2.jpg)
-
-  &::before
-    @extend %section-full-overlay
-    background-color: rgba($over, .92)
-
-.s-review-headling
-  text-align: center
-
-.s-review-quotes
-  position: absolute
-  width: 100%
-
-  &::before, &::after
-    content: ',,'
-    position: absolute
-    font-size: 56px
-    color: $accent
-    font-family: 'Times New Roman', serif
-    font-weight: bold
-    line-height: 0
-    display: block
-
-  &::before
-    top: 210px
-    left: -60px
-    transform: rotate(180deg)
-
-  &::after
-    top: 172px
-    right: -60px
-
-@media only screen and (max-width: 768px)
-  .s-review-quotes
-    display: none
-
 /* There are default styles for select of the section form 'callback'. 
  It is stylized by 'selectized' plugin additionally in this layout */
 
@@ -985,6 +710,291 @@ select.s-call-callback-select
 
   #s-call-callback
     padding: 12% 0
+
+.header-composition-container
+  height: 100%
+  display: flex
+  align-items: center
+
+.header-composition
+  text-align: center
+  position: relative
+  margin: 0 auto
+
+  .button
+    padding: 16px 45px
+    margin-top: 25px
+
+.header-composition-welcome
+  text-transform: uppercase
+  font-size: 14px
+  white-space: nowrap
+  margin: 0
+  display: flex
+  align-items: center
+  position: relative
+  top: 10px
+
+  span
+    margin: 0 10px
+    position: relative
+
+  &::before, &::after
+    content: ''
+    height: 1px
+    background-color: white
+    position: relative
+    width: 100%
+    display: inline-block
+
+.header-composition-headling
+  @extend .headling
+  margin: 0
+  font-weight: 100
+  font-size: 67px
+  line-height: 1.6
+  border-bottom: 1px solid white
+
+.header-composition-location-info
+  font-size: 17px
+  text-transform: uppercase
+  display: block
+  margin-top: 25px
+
+  &::before, &::after
+    content: '\f005'
+    font-family: fontawesome
+    padding: 0 10px
+    color: #555
+    font-size: 12px
+
+.header-composition-about-info
+  margin-top: 40px
+
+@media only screen and (max-width : 1200px)
+  .header-composition-headling
+    font-size: 64px
+
+@media only screen and (max-width : 992px)
+  .header-composition-headling
+    font-size: 48px
+
+@media only screen and (max-width : 768px)
+  .header-composition
+    .button
+      padding: 12px 40px
+
+@media only screen and (max-width : 480px)
+  .header-composition-headling
+    font-size: 28px
+
+  .header-composition-welcome
+    font-size: 9px
+    top: 5px
+
+  .header-composition-location-info
+    margin-top: 14px
+    font-size: 14px
+
+  .header-composition-about-info
+    font-size: 14px
+
+.header-contacts
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+  border-top: rgba(#fff, .15) 1px solid
+  width: 100%
+  padding: 12.5px 0
+  background-color: rgba(#151515, .15) 
+
+  .contact-line
+    font-size: 16px
+    text-align: center
+    margin: 0
+
+@media only screen and (max-width : 1200px)
+  .header-contacts
+    .contact-line
+      font-size: 15px
+
+@media only screen and (max-width : 768px)
+  .header-contacts
+    .contact-line
+      text-align: left
+
+.site-header
+  min-height: 700px
+  height: 100vh
+  background-color: $dark
+  background-image: url(#{$img-dir}top-bg.jpg)
+  color: white
+
+// The header-menu (mm-menu plugin) default styles overriding
+
+html.mm-opened
+  overflow-y: scroll
+
+.mm-panels>.mm-panel.mm-hasnavbar
+  right: -18px
+
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+  height: 0
+
+.mm-panels>.mm-panel>.mm-listview:first-child, 
+.mm-panels>.mm-panel>.mm-navbar+.mm-listview
+  margin: 0
+
+.mm-listview > li:not(.mm-divider)::after
+  display: none
+
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), 
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>span
+  background-color: transparent
+
+// The header-menu styling
+
+.mm-navbar
+  height: auto
+  position: relative
+  border-bottom: none
+
+.mm-title
+  padding: 0
+  margin-top: 10px
+  margin-bottom: 30px
+  margin-right: 20px
+  margin-left: 20px
+  
+.mm-listview > li > a
+  transition: $common-transition
+  padding-left: 14%
+  padding-right: 14%
+  padding-top: 10px
+
+  &::before
+    content: '\f219'
+    font-family: fontawesome
+    margin-right: 8px
+    text-decoration: none
+    font-size: 12px
+    color: white
+    transition: $common-transition
+
+.mm-listview > li > a:hover
+  color: $accent
+
+  &::before
+    color: $accent
+
+.header-social
+  position: absolute
+  display: flex
+  top: 0
+  right: 0
+  height: 100%
+  border-left: 1px solid rgba(#fff, .1)
+  padding: 0 12.5px
+
+.header-top-line
+  padding: 40px
+  position: absolute
+  width: 100%
+  z-index: 1
+
+.header-logo
+  @extend .logo
+  margin-left: 5px
+  position: absolute
+  top: 49.5px
+
+.header-phone
+  @extend .phone
+  display: block
+  position: absolute
+  right: 82px
+  top: 42px
+
+  &::before
+    margin-right: 11.5px
+
+
+@media only screen and (max-width : 480px)
+  .header-top-line
+    .phone
+      display: none
+
+#s-review-comments
+  text-align: center
+
+.s-review-comment
+  margin-top: 20px
+
+.s-review-comment-header
+  font-family: 'Times New Roman', serif
+  font-style: italic
+  font-weight: bold
+  font-size: 30px
+
+.s-review-comment-date
+  font-family: 'Times New Roman', serif
+  font-style: italic
+  font-size: 14px
+  margin-top: 2px
+  display: block
+  color: #888
+
+.s-review-comment-stars
+  margin-top: 18px
+  margin-bottom: 25px
+  font-size: 14px
+  color: $accent
+
+  .fa
+    margin: 0 2.5px
+
+.s-review-comment-text
+  color: #95989A
+  margin: 0
+
+.s-review
+  @extend .section-inverse, %section-common-padding
+  background-image: url(#{$img-dir}bg-2.jpg)
+
+  &::before
+    @extend %section-full-overlay
+    background-color: rgba($over, .92)
+
+.s-review-headling
+  text-align: center
+
+.s-review-quotes
+  position: absolute
+  width: 100%
+
+  &::before, &::after
+    content: ',,'
+    position: absolute
+    font-size: 56px
+    color: $accent
+    font-family: 'Times New Roman', serif
+    font-weight: bold
+    line-height: 0
+    display: block
+
+  &::before
+    top: 210px
+    left: -60px
+    transform: rotate(180deg)
+
+  &::after
+    top: 172px
+    right: -60px
+
+@media only screen and (max-width: 768px)
+  .s-review-quotes
+    display: none
 
 .s-partners
   @extend %section-common-padding
