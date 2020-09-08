@@ -6,3 +6,14 @@
 
 .footer-column
   margin: 15px 0
+
+  &:nth-child(1)
+    margin-top: 25px
+
+  &:nth-child(2n)
+    padding-left: 20px
+
+@media screen and ( max-width:  1200px)
+  .footer-column
+    &:nth-child(2n)
+      padding-left: 0px

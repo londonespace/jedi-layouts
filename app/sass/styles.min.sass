@@ -7,6 +7,8 @@ $over: #3D3C3C
 
 $common-transition: .25s ease
 
+$img-dir: '../../img/'
+
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
 		font-family: $fname
@@ -455,10 +457,28 @@ section
 .footer-column
   margin: 15px 0
 
+  &:nth-child(1)
+    margin-top: 25px
+
+  &:nth-child(2n)
+    padding-left: 20px
+
+@media screen and ( max-width:  1200px)
+  .footer-column
+    &:nth-child(2n)
+      padding-left: 0px
+
+.footer-menu
+  height: 100%
+
 .footer-menu-list
   padding: 0
   margin: 0
   list-style-type: none
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
 
 .footer-menu-link
   color: #979797
@@ -489,7 +509,7 @@ section
     padding-left: 30px
 
 .footer-social
-  margin-top: 38px
+  margin-top: 72.5px
 
 .footer-social-links-item
   display: inline-block
@@ -499,6 +519,7 @@ section
   @extend .social-link
   color: #ABABAB
   margin-bottom: 0
+  margin-top: 0
 
   &:hover
     color: rgba(#fff, .8)
@@ -509,6 +530,60 @@ section
 
   .footer-social-link
     margin-top: 0
+
+.s-king
+  @extend .section-inverse, %section-common-padding
+  background-image: url(#{$img-dir}photos/foto-16.jpg)
+  font-size: 18px
+
+  &::before
+    @extend %section-full-overlay
+    background-color: rgba($over, .92)
+
+.s-king-info
+  margin: 30px 0
+
+// The section-king gallery (fotorama plugin) default styles overriding
+
+.s-king-gallery.fotorama
+  background-color: rgba($dark, .4)
+
+  .fotorama__nav-wrap
+    position: absolute
+    bottom: 15px
+    padding: 0 30px
+    width: 100%
+
+  .fotorama__thumb
+    border: 4px solid #fff
+    transition: $common-transition
+  
+  .fotorama__thumb-border
+    border: none
+
+  .fotorama__nav:after, .fotorama__stage:before,
+  .fotorama__nav:after, .fotorama__stage:after
+    display: none
+
+  .fotorama__arr--prev::before, .fotorama__arr--next::before
+    font-family: fontawesome
+    font-size: 32px
+
+  .fotorama__arr--prev::before
+    content: '\f104'
+    position: relative
+    left: 16px
+
+  .fotorama__arr--next::before
+    content: '\f105'
+
+  .fotorama__active .fotorama__thumb
+    border-color: $over
+
+@media screen and (max-width: 1200px)
+  .s-king
+    font-size: 16px
+  
 
 .header-composition-container
   height: 100%
@@ -626,7 +701,7 @@ section
   min-height: 700px
   height: 100vh
   background-color: $dark
-  background-image: url(../../img/dest/top-bg.jpg)
+  background-image: url(#{$img-dir}top-bg.jpg)
   color: white
 
 // The header-menu (mm-menu plugin) default styles overriding
@@ -722,123 +797,6 @@ html.mm-opened
     .phone
       display: none
 
-.s-king
-  @extend .section-inverse, %section-common-padding
-  background-image: url(../../img/dest/photos/foto-16.jpg)
-  font-size: 18px
-
-  &::before
-    @extend %section-full-overlay
-    background-color: rgba($over, .92)
-
-.s-king-info
-  margin: 30px 0
-
-// The section-king gallery (fotorama plugin) default styles overriding
-
-.s-king-gallery.fotorama
-  background-color: rgba($dark, .4)
-
-  .fotorama__nav-wrap
-    position: absolute
-    bottom: 15px
-    padding: 0 30px
-    width: 100%
-
-  .fotorama__thumb
-    border: 4px solid #fff
-    transition: $common-transition
-  
-  .fotorama__thumb-border
-    border-color: $over
-
-  .fotorama__nav:after, .fotorama__stage:before,
-  .fotorama__nav:after, .fotorama__stage:after
-    display: none
-
-  .fotorama__arr--prev::before, .fotorama__arr--next::before
-    font-family: fontawesome
-    font-size: 32px
-
-  .fotorama__arr--prev::before
-    content: '\f104'
-    position: relative
-    left: 16px
-
-  .fotorama__arr--next::before
-    content: '\f105'
-
-  .fotorama__active .fotorama__thumb
-    border-color: $over
-
-@media screen and (max-width: 1200px)
-  .s-king
-    font-size: 16px
-  
-
-.s-partners
-  @extend %section-common-padding
-  background-image: url(../../img/dest/bg-3.jpg)
-  &::before
-    @extend %section-full-overlay
-    background-color: rgba(white, .92)
-
-.s-partners-headling
-  @extend .section-common-headling
-  text-align: center
-  margin-top: 10px
-
-.s-partners-carousel-partner
-  height: 100%
-  display: flex
-  margin: auto
-
-#s-partners-carousel .owl-stage
-  display: flex
-
-  .owl-item
-    margin-top: 30px
-
-  .owl-item img
-    max-width: 100%
-    width: auto
-    display: inline-block
-    margin: auto
-
-#s-partners-carousel .owl-nav
-  position: absolute
-  top: 0
-  width: 100%
-  z-index: 2
-
-  .owl-prev, .owl-next
-    position: absolute
-    top: 50px
-    color: #999999
-    font-size: 30px
-    transition: opacity .5s ease
-    padding: 0 10px
-
-  .owl-prev:hover, .owl-next:hover
-    opacity: .6
-
-  .owl-prev
-    left: -60px
-
-  .owl-next
-    right: -60px
-
-@media screen and ( max-width: 768px)
-  .s-partners-headling
-    margin: 0
-
-  #s-partners-carousel .owl-nav .owl-prev
-    left: 0
-
-  #s-partners-carousel .owl-nav .owl-next
-    right: 0
-  
-
 #s-review-comments
   text-align: center
 
@@ -873,7 +831,7 @@ html.mm-opened
 
 .s-review
   @extend .section-inverse, %section-common-padding
-  background-image: url(../../img/dest/bg-2.jpg)
+  background-image: url(#{$img-dir}bg-2.jpg)
 
   &::before
     @extend %section-full-overlay
@@ -965,7 +923,7 @@ select.s-call-callback-select
 
 .s-call
   @extend .section-inverse
-  background-image: url(../../img/dest/madama.jpg)
+  background-image: url(#{$img-dir}madama.jpg)
   background-size: contain
   background-repeat: no-repeat
   background-position: 10%
@@ -1013,6 +971,8 @@ select.s-call-callback-select
 
 .s-call-submit
   @extend .button-white
+  font-weight: 500
+  font-size: 13px
 
 @media screen and ( max-width: 1200px )
   .s-call
@@ -1025,6 +985,69 @@ select.s-call-callback-select
 
   #s-call-callback
     padding: 12% 0
+
+.s-partners
+  @extend %section-common-padding
+  background-image: url(#{$img-dir}bg-3.jpg)
+  &::before
+    @extend %section-full-overlay
+    background-color: rgba(white, .92)
+
+.s-partners-headling
+  @extend .section-common-headling
+  text-align: center
+  margin-top: 10px
+
+.s-partners-carousel-partner
+  height: 100%
+  display: flex
+  margin: auto
+
+#s-partners-carousel .owl-stage
+  display: flex
+
+  .owl-item
+    margin-top: 30px
+
+  .owl-item img
+    max-width: 100%
+    width: auto
+    display: inline-block
+    margin: auto
+
+#s-partners-carousel .owl-nav
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 2
+
+  .owl-prev, .owl-next
+    position: absolute
+    top: 50px
+    color: #999999
+    font-size: 30px
+    transition: opacity .5s ease
+    padding: 0 10px
+
+  .owl-prev:hover, .owl-next:hover
+    opacity: .6
+
+  .owl-prev
+    left: -60px
+
+  .owl-next
+    right: -60px
+
+@media screen and ( max-width: 768px)
+  .s-partners-headling
+    margin: 0
+
+  #s-partners-carousel .owl-nav .owl-prev
+    left: 0
+
+  #s-partners-carousel .owl-nav .owl-next
+    right: 0
+  
 
 .carousel-services-content
   padding: 50px 10%
@@ -1074,15 +1097,15 @@ select.s-call-callback-select
 
 .carousel-services-cosmetological-image
   @extend .carousel-services-image
-  background-image: url(../../img/dest/service.png)
+  background-image: url(#{$img-dir}service.png)
 
 .carousel-services-hairdress-image
   @extend .carousel-services-image
-  background-image: url(../../img/dest/service2.png)
+  background-image: url(#{$img-dir}service2.png)
 
 .carousel-services-manicure-image
   @extend .carousel-services-image
-  background-image: url(../../img/dest/service3.png)
+  background-image: url(#{$img-dir}service3.png)
 
 @media screen and ( max-width: 375px )
   .carousel-services-headling

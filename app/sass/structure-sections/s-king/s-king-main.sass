@@ -1,6 +1,6 @@
 .s-king
   @extend .section-inverse, %section-common-padding
-  background-image: url(../../img/dest/photos/foto-16.jpg)
+  background-image: url(#{$img-dir}photos/foto-16.jpg)
   font-size: 18px
 
   &::before
@@ -26,7 +26,7 @@
     transition: $common-transition
   
   .fotorama__thumb-border
-    border-color: $over
+    border: none
 
   .fotorama__nav:after, .fotorama__stage:before,
   .fotorama__nav:after, .fotorama__stage:after

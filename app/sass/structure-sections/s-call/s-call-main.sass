@@ -1,6 +1,6 @@
 .s-call
   @extend .section-inverse
-  background-image: url(../../img/dest/madama.jpg)
+  background-image: url(#{$img-dir}madama.jpg)
   background-size: contain
   background-repeat: no-repeat
   background-position: 10%
@@ -48,6 +48,8 @@
 
 .s-call-submit
   @extend .button-white
+  font-weight: 500
+  font-size: 13px
 
 @media screen and ( max-width: 1200px )
   .s-call
