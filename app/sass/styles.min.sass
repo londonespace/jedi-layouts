@@ -397,147 +397,6 @@ section
   &.active
     right: 25px
 
-.footer-contacts
-  list-style: none
-  padding: 0
-  margin: 0
-
-.footer-contact-line
-  @extend .contact-line
-  padding-left: 24px
-  white-space: normal
-  margin-bottom: 15px
-
-  &::before
-    position: absolute
-
-.footer-address, .footer-clock
-  @extend .footer-contact-line
-  font-size: 15px
-
-  &::before
-    font-size: 18px
-    top: -1.5px
-    left: 0
-
-.footer-address
-  @extend .address
-
-.footer-clock
-  @extend .clock
-
-.footer-phone
-  @extend .footer-contact-line, .phone
-  font-size: 26px
-  white-space: nowrap
-
-  &::before
-    font-size: 22px
-    left: 2.5px
-    top: 1.5px
-
-.footer-map
-  max-height: 200px
-  opacity: 0.7
-  transition: opacity .5s ease
-
-  &:hover
-    opacity: 1
-
-@media screen and ( max-width: 992px )
-  .footer-phone
-    font-size: 24px
-    margin-top: 0
-
-.footer-first-saloon
-  color: #666
-  padding: 0
-  margin-bottom: 15px
-  margin-top: 15px
-
-.site-footer
-  background-color: #242424
-  padding: 3% 0
-  color: white
-  font-size: 14px
-
-.footer-column
-  margin: 15px 0
-
-  &:nth-child(1)
-    margin-top: 25px
-
-  &:nth-child(2n)
-    padding-left: 20px
-
-@media screen and ( max-width:  1200px)
-  .footer-column
-    &:nth-child(2n)
-      padding-left: 0px
-
-.footer-menu
-  height: 100%
-
-.footer-menu-list
-  padding: 0
-  margin: 0
-  list-style-type: none
-  height: 100%
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-
-.footer-menu-link
-  color: #979797
-  transition: color .5s ease
-  display: inline-block
-  padding: 3.5px 0
-  text-decoration: underline
-  padding-left: 23px
-  position: relative
-
-  &::before
-    position: absolute
-    left: 0
-    top: 4px
-    font-family: fontawesome
-    content: '\f219'
-    color: white
-    transition: inherit
-  
-  &:hover, &:focus
-    color: $accent
-
-  &:hover::before, &:focus::before
-    color: $accent
-
-@media screen and ( max-width: 768px  )
-  .footer-menu
-    padding-left: 30px
-
-.footer-social
-  margin-top: 72.5px
-
-.footer-social-links-item
-  display: inline-block
-  margin: 3px
-
-.footer-social-link
-  @extend .social-link
-  color: #ABABAB
-  margin-bottom: 0
-  margin-top: 0
-
-  &:hover
-    color: rgba(#fff, .8)
-
-@media screen and ( max-width: 768px  )
-  .footer-social
-    margin-top: 0
-
-  .footer-social-link
-    margin-top: 0
-
 .header-composition-container
   height: 100%
   display: flex
@@ -752,6 +611,147 @@ html.mm-opened
     .phone
       display: none
 
+.footer-contacts
+  list-style: none
+  padding: 0
+  margin: 0
+
+.footer-contact-line
+  @extend .contact-line
+  padding-left: 24px
+  white-space: normal
+  margin-bottom: 15px
+
+  &::before
+    position: absolute
+
+.footer-address, .footer-clock
+  @extend .footer-contact-line
+  font-size: 15px
+
+  &::before
+    font-size: 18px
+    top: -1.5px
+    left: 0
+
+.footer-address
+  @extend .address
+
+.footer-clock
+  @extend .clock
+
+.footer-phone
+  @extend .footer-contact-line, .phone
+  font-size: 26px
+  white-space: nowrap
+
+  &::before
+    font-size: 22px
+    left: 2.5px
+    top: 1.5px
+
+.footer-map
+  max-height: 200px
+  opacity: 0.7
+  transition: opacity .5s ease
+
+  &:hover
+    opacity: 1
+
+@media screen and ( max-width: 992px )
+  .footer-phone
+    font-size: 24px
+    margin-top: 0
+
+.footer-first-saloon
+  color: #666
+  padding: 0
+  margin-bottom: 15px
+  margin-top: 15px
+
+.site-footer
+  background-color: #242424
+  padding: 3% 0
+  color: white
+  font-size: 14px
+
+.footer-column
+  margin: 15px 0
+
+  &:nth-child(1)
+    margin-top: 25px
+
+  &:nth-child(2n)
+    padding-left: 20px
+
+@media screen and ( max-width:  1200px)
+  .footer-column
+    &:nth-child(2n)
+      padding-left: 0px
+
+.footer-menu
+  height: 100%
+
+.footer-menu-list
+  padding: 0
+  margin: 0
+  list-style-type: none
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.footer-menu-link
+  color: #979797
+  transition: color .5s ease
+  display: inline-block
+  padding: 3.5px 0
+  text-decoration: underline
+  padding-left: 23px
+  position: relative
+
+  &::before
+    position: absolute
+    left: 0
+    top: 4px
+    font-family: fontawesome
+    content: '\f219'
+    color: white
+    transition: inherit
+  
+  &:hover, &:focus
+    color: $accent
+
+  &:hover::before, &:focus::before
+    color: $accent
+
+@media screen and ( max-width: 768px  )
+  .footer-menu
+    padding-left: 30px
+
+.footer-social
+  margin-top: 72.5px
+
+.footer-social-links-item
+  display: inline-block
+  margin: 3px
+
+.footer-social-link
+  @extend .social-link
+  color: #ABABAB
+  margin-bottom: 0
+  margin-top: 0
+
+  &:hover
+    color: rgba(#fff, .8)
+
+@media screen and ( max-width: 768px  )
+  .footer-social
+    margin-top: 0
+
+  .footer-social-link
+    margin-top: 0
+
 /* There are default styles for select of the section form 'callback'. 
  It is stylized by 'selectized' plugin additionally in this layout */
 
@@ -875,7 +875,7 @@ select.s-call-callback-select
 .s-king
   @extend .section-inverse, %section-common-padding
   background-image: url(#{$img-dir}photos/foto-16.jpg)
-  font-size: 18px
+  font-size: 17.5px
 
   &::before
     @extend %section-full-overlay
